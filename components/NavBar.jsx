@@ -1,18 +1,82 @@
 import React from "react";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom"; // Importa el componente Link de React Router
 
 const NavBar = () => {
   return (
-    <nav style={{ padding: "10px", display: "flex", justifyContent: "space-between", backgroundColor: "#f8f9fa" }}>
+    <nav
+      style={{
+        padding: "10px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "#f8f9fa",
+      }}
+    >
+      {/* Logo */}
       <div>
-        <img src="logo.png" alt="Logo de la tienda" style={{ height: "40px" }} />
+        <Link to="/">
+          <img
+            src="logo.png"
+            alt="Logo de la tienda"
+            style={{ height: "40px" }}
+          />
+        </Link>
       </div>
-      <ul style={{ listStyle: "none", display: "flex", gap: "15px", margin: 0 }}>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+
+      {/* Links de navegación */}
+      <ul
+        style={{
+          listStyle: "none",
+          display: "flex",
+          gap: "15px",
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        <li>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            Inicio
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/productos"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Productos
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/categoria/tecnologia"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Tecnología
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/categoria/ropa"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Ropa
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/contacto"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Contacto
+          </Link>
+        </li>
       </ul>
+
+      {/* Widget del carrito */}
       <CartWidget />
     </nav>
   );
 };
+
+export default NavBar;
