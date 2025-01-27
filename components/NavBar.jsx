@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom"; // Importa el componente Link de React Router
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -24,7 +24,7 @@ const NavBar = () => {
         </Link>
       </div>
 
-      {/* Links de navegación */}
+      {/* Links navegación */}
       <ul
         style={{
           listStyle: "none",
@@ -73,7 +73,7 @@ const NavBar = () => {
         </li>
       </ul>
 
-      {/* Widget del carrito */}
+      {/* Widget carrito */}
       <CartWidget />
     </nav>
   );
